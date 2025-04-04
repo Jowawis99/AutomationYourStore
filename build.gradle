@@ -45,10 +45,5 @@ java {
 }
 
 tasks.named('test') {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
-}
-
-tasks.named('test') {
     systemProperty "cucumber.options", System.getProperty("cucumber.options")
 }

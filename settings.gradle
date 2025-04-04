@@ -11,4 +11,3 @@ plugins {
 }
 
 rootProject.name = 'Your_Store_Automation'
-include('app')
