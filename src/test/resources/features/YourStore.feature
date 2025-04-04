@@ -1,5 +1,6 @@
 Feature: Navegando en Your Store
 
+    @FlujoCompleto
     Scenario: Agregar producto de compras y remover el producto
         Given Estoy en la web de Your Store
         When Busco el producto "Iphone"

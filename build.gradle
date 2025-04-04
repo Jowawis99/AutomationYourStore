@@ -46,4 +46,6 @@ java {
 
 tasks.named('test') {
     systemProperty "cucumber.options", System.getProperty("cucumber.options")
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+
 }
