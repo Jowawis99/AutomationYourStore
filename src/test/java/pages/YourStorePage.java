@@ -1,8 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class YourStorePage extends BasePage {
 
@@ -18,7 +16,6 @@ public class YourStorePage extends BasePage {
 
     public void searchProduct(String ProductName){
         write(inputSearch, ProductName + Keys.ENTER);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("iPhone")));
     }
  
 }

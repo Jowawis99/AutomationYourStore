@@ -3,6 +3,7 @@ package pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -40,12 +41,20 @@ public class BasePage {
    }
 
    public void clickElement(String locator){
+        try {
         Find(locator).click();
+     } catch (StaleElementReferenceException e) {
+               Find(locator).click();
+     }
    }
 
    public void write(String locator, String keyToSend){
         Find(locator).clear();
         Find(locator).sendKeys(keyToSend);
    }
+
+   public String getText(String locator) {
+     return Find(locator).getText().trim();
+     }
     
 }
