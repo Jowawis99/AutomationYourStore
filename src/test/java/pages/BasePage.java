@@ -1,7 +1,7 @@
 package pages;
 
 import java.time.Duration;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,9 @@ public class BasePage {
 
     static {
      WebDriverManager.chromedriver().setup();
-     driver = new ChromeDriver();
+     ChromeOptions options = new ChromeOptions();
+     options.addArguments("--headless=new");
+     driver = new ChromeDriver(options);
      wait = new WebDriverWait(driver, Duration.ofSeconds(15));
  }
 
