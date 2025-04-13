@@ -8,10 +8,10 @@ import io.cucumber.junit.CucumberOptions;
 import pages.BasePage;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources\\features",
+@CucumberOptions(features="src/test/resources/features",
         glue = "steps",
         plugin = {"pretty","html:target/cucumber-reports"},
-        tags = "@FlujoCompletop"
+        tags = "@FlujoCompleto"
 )
 public class TestRunner {
     @AfterClass
