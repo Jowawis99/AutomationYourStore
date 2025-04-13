@@ -22,7 +22,7 @@ public class BasePage {
      ChromeOptions options = new ChromeOptions();
      options.addArguments("--headless=new");
      driver = new ChromeDriver(options);
-     wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+     wait = new WebDriverWait(driver, Duration.ofSeconds(5));
  }
 
    public BasePage(WebDriver driver) {
