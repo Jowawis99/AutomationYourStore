@@ -15,13 +15,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BasePage {
 
     protected static WebDriver driver;
+    protected static WebDriverWait wait;
 
-   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-   static {
-       WebDriverManager.chromedriver().setup();
-       driver = new ChromeDriver();
-   }
+    static {
+     WebDriverManager.chromedriver().setup();
+     driver = new ChromeDriver();
+     wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+ }
 
    public BasePage(WebDriver driver) {
        BasePage.driver = driver;
