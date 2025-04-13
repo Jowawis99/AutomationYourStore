@@ -2,7 +2,7 @@ package pages;
 
 public class ViewCartPage extends BasePage{
     private String productName = "(//td[@class='text-left']/a)[2]";
-    private String btnRemoveProd= "//button[@data-original-title='Removerrrr']";
+    private String btnRemoveProd= "//button[@data-original-title='Remove']";
     private String emptyCartMessage = "//div[@id='content']/p";
 
     public ViewCartPage(){
