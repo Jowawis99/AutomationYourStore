@@ -22,9 +22,9 @@ pipeline {
             steps {
                 bat """
                     gradle clean test ^
-                    -Dcucumber.options=--tags @FlujoCompleto ^
+                    -Dcucumber.filter.tags=@FlujoCompleto ^
                     -Dcucumber.publish.enabled=true ^
-                    -Dcucumber.publish.token=${TOKEN}
+                    -Dcucumber.publish.token=%TOKEN%
                 """
             }
         }
