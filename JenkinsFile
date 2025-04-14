@@ -24,7 +24,7 @@ pipeline {
                     gradle clean test ^
                     -Dcucumber.filter.tags=@FlujoCompleto ^
                     -Dcucumber.publish.enabled=true ^
-                    -Dcucumber.publish.token=%TOKEN%
+                    -Dcucumber.publish.token=%CUCUMBER_PUBLISH_TOKEN%
                 """
             }
         }
