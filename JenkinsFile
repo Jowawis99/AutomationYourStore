@@ -20,7 +20,7 @@ pipeline {
                     -Dcucumber.publish.enabled=true ^
                     -Dcucumber.publish.token=%TOKEN%
                 """
-}
+                }
             }
         }
     }
