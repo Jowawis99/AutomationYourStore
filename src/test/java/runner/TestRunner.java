@@ -10,7 +10,7 @@ import pages.BasePage;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/features",
         glue = "steps",
-        publish = true
+        plugin = {"pretty","html:target/cucumber-reports"}
 )
 public class TestRunner {
     @AfterClass
