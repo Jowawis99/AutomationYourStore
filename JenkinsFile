@@ -14,11 +14,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                withCredentials([string(credentialsId: 'CUCUMBER_PUBLISH_TOKEN', variable: 'TOKEN')]) {
-                bat """gradle clean test ^
+                withCredentials([string(credentialsId: 'CUCUMBER_PUBLISH_TOKEN', variable: 'CUCUMBER_PUBLISH_TOKEN')]) {
+                bat """
+                    gradle clean test ^
                     -Dcucumber.filter.tags=@FlujoCompleto ^
-                    -Dcucumber.publish.enabled=true ^
-                    -Dcucumber.publish.token=%TOKEN%
+                    -Dcucumber.publish.enabled=true
                 """
                 }
             }
