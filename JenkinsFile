@@ -1,0 +1,39 @@
+pipeline {
+    //En que agente esto va a estar corriendo
+    agent any
+    //Que herramienas vamos a estar instalando al principio
+    tools{
+        gradle "Gradle"
+    }    
+
+    environment {
+        TOKEN = credentials('CUCUMBER_PUBLISH_TOKEN')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                //Agarrar el repo en el que está el código que necesitamos correr
+                git 'https://github.com/Jowawis99/AutomationYourStore'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat """
+                    gradle clean test ^
+                    -Dcucumber.options=--tags @FlujoCompleto ^
+                    -Dcucumber.publish.enabled=true ^
+                    -Dcucumber.publish.token=${TOKEN}
+                """
+            }
+        }
+    }
+    post {
+        always {
+            echo "Publicando reportes..."
+            archiveArtifacts artifacts: 'build/reports/**', allowEmptyArchive: true
+            junit 'build/test-results/test/*.xml'
+        }
+    }
+}
