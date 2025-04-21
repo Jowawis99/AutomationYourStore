@@ -22,10 +22,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Setup Gradle
+    - name: Dar permisos a gradlew
       uses: gradle/actions/setup-gradle@v4
 
     #build completo
+    - name: Build del proyecto
+      run: chmod +x ./gradlew
     - name: Build del proyecto
       run: ./gradlew build
 
